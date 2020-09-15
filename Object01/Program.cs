@@ -21,8 +21,15 @@ namespace Object01
 
     class Teglalap
     {
-        public int a;
-        public int b;
+        private int a;
+        private int b;
+
+        public Teglalap(int oldala, int oldalb)
+        {
+            a = oldala;
+            b = oldalb;
+        }
+
 
         public int Kerulet()
         {
@@ -43,7 +50,15 @@ namespace Object01
 
         public Kor(int sugar)
         {
-            r = sugar;
+            if (sugar < 1)
+            {
+                r = 1;
+            }
+            else
+            {
+                r = sugar;
+            }
+            
         }
 
         public double Terulet()
@@ -56,6 +71,13 @@ namespace Object01
         {
             double k = 2 * r * Math.PI;
             return k;
+        }
+
+        public void AdatokKiirasa()
+        {
+            Console.WriteLine("sugár: {0}",r);
+            Console.WriteLine("terület: {0}",Terulet());
+            Console.WriteLine("kerlet: {0}",Kerulet());
         }
 
 
@@ -81,19 +103,19 @@ namespace Object01
             Console.WriteLine("Kör sugara");
             int sugar = int.Parse(Console.ReadLine());
             Kor k = new Kor(sugar);
-           
+            k.AdatokKiirasa();
             //k.r = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("kerület {0}",k.Kerulet());
-            Console.WriteLine("terület {0}",k.Terulet());
+            //Console.WriteLine("kerület {0}",k.Kerulet());
+            //Console.WriteLine("terület {0}",k.Terulet());
             
             Console.WriteLine("TÉGLALAP*****************");
-            Teglalap t = new Teglalap();
+            Console.WriteLine("Téglalap a oldala");
+            int oldala = int.Parse(Console.ReadLine());
+            Console.WriteLine("Téglalap b oldala");
+            int oldalb = int.Parse(Console.ReadLine());
+            Teglalap t = new Teglalap(oldala, oldalb);
 
-            Console.WriteLine("téglalap a oldala");
-            t.a = int.Parse(Console.ReadLine());
-            Console.WriteLine("téglalap b oldala");
-            t.b = int.Parse(Console.ReadLine());
             Console.WriteLine("kerület {0}",t.Kerulet());
             Console.WriteLine("terület {0}",t.Terulet());
 
