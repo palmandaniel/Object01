@@ -36,6 +36,30 @@ namespace Object01
             return terulet;
         }
     }
+
+    class Kor
+    {
+        private int r;
+
+        public Kor(int sugar)
+        {
+            r = sugar;
+        }
+
+        public double Terulet()
+        {
+            double t = r * r * Math.PI;
+            return t;
+        }
+
+        public double Kerulet()
+        {
+            double k = 2 * r * Math.PI;
+            return k;
+        }
+
+
+    }
     class Program
     {
         static void Main(string[] args)
@@ -52,14 +76,29 @@ namespace Object01
             //Eva.eletkor = 18;
             //Console.WriteLine(Pisti.Bemutatkozas());
             //Console.WriteLine(Eva.Bemutatkozas());
-            
-            //Teglalap t = new Teglalap();
 
-            //t.a = 5;
-            //t.b = 10;
-            //Console.WriteLine("kerület ",t.Kerulet());
-            //Console.WriteLine("terület ",t.Terulet());
+            Console.WriteLine("KÖR**********************");
+            Console.WriteLine("Kör sugara");
+            int sugar = int.Parse(Console.ReadLine());
+            Kor k = new Kor(sugar);
+           
+            //k.r = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("kerület {0}",k.Kerulet());
+            Console.WriteLine("terület {0}",k.Terulet());
             
+            Console.WriteLine("TÉGLALAP*****************");
+            Teglalap t = new Teglalap();
+
+            Console.WriteLine("téglalap a oldala");
+            t.a = int.Parse(Console.ReadLine());
+            Console.WriteLine("téglalap b oldala");
+            t.b = int.Parse(Console.ReadLine());
+            Console.WriteLine("kerület {0}",t.Kerulet());
+            Console.WriteLine("terület {0}",t.Terulet());
+
+
+
             Console.ReadKey();
         }
     }
